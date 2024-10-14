@@ -1,11 +1,11 @@
 import os
-import face_recognition_system.face_recognition as face_recognition
+import face_recognition
 import cv2
 import numpy as np
 import pickle
 
 # Define the path to the directory containing known faces
-KNOWN_FACES_DIR = "known_faces/"
+KNOWN_FACES_DIR = "./face_recognition_system/known_faces/"
 TOLERANCE = 0.6  # Distance between face encodings to consider a match
 MODEL = "hog"  # "hog" or "cnn" for faster detection
 
