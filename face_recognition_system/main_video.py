@@ -17,7 +17,7 @@ sfr = SimpleFacerec()
 sfr.load_encoding_images("./face_recognition_system/images/")
 
 # Load Camera
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(2)
 
 
 while True:
