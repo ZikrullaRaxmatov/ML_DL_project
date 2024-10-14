@@ -6,10 +6,10 @@ from ultralytics.utils.plotting import Annotator, colors
 model = YOLO('./yolo/weights/yolov8m-seg.pt')
 names = model.model.names
 
-input_video_path = './videos/security_camera.mp4'
-output_video_path = f"./out/segment_{os.path.basename(input_video_path)}"
+input_video_path = './yolo/videos/security_camera.mp4'
+output_video_path = f"./yolo/out/segment_{os.path.basename(input_video_path)}"
 
-w, h = 720, 1200
+w, h = 500, 700
 cap = cv2.VideoCapture(input_video_path)
 out = cv2.VideoWriter(output_video_path, cv2.VideoWriter_fourcc(*'mp4v'), 30, (w, h))
 
