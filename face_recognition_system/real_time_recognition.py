@@ -4,11 +4,11 @@ import numpy as np
 import pickle
 
 # Load the known face encodings
-with open("face_encodings.pkl", "rb") as f:
+with open("./face_recognition_system/face_encodings.pkl", "rb") as f:
     known_face_encodings, known_face_names = pickle.load(f)
 
 # Initialize the video capture object
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture(2)
 
 TOLERANCE = 0.6
 

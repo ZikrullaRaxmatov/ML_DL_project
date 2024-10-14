@@ -27,5 +27,5 @@ for person_name in os.listdir(KNOWN_FACES_DIR):
         known_face_names.append(person_name)
 
 # Save encodings to a file for later use
-with open("face_encodings.pkl", "wb") as f:
+with open("./face_recognition_system/face_encodings.pkl", "wb") as f:
     pickle.dump((known_face_encodings, known_face_names), f)
