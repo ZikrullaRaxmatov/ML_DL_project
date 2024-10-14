@@ -8,7 +8,8 @@ with open("face_encodings.pkl", "rb") as f:
     known_face_encodings, known_face_names = pickle.load(f)
 
 # Initialize the video capture object
-video_capture = cv2.VideoCapture(1)
+video_capture = cv2.VideoCapture(0)
+
 TOLERANCE = 0.6
 
 while True:
