@@ -29,6 +29,7 @@ sfr.load_encoding_images("./face_recognition_system/images/")
 # Load Camera
 cap = cv2.VideoCapture(2)
 
+currentFrame = 0
 
 while True:
     ret, frame = cap.read()
@@ -59,6 +60,7 @@ while True:
                         break
 
     cv2.imshow("Student attendance system", frame)
+    cv2.imwrite(f'./generated_data/frame{str(currentFrame)}.jpg', frame)
 
     key = cv2.waitKey(1)
     if key == 27:

@@ -1,36 +1,40 @@
 import cv2
 import os
+import time
 
 cap = cv2.VideoCapture(2)
 
-'''
 try:
-    if os.path.exists('../face_recognition_system/generated_data'):
-        os.mkdir('../face_recognition_system/generated_data')
+    if not os.path.exists('./datasets/generated_data'):
+        os.mkdir('./datasets/generated_data')
 except OSError:
     print('Error: Creating directory of data')
-'''
 
-currentFrame = 0
+
+listSecond = []
+
 
 while True:
     
     ret, frame = cap.read()
-    
 
     if ret:
-        name = 'frame' + str(currentFrame) + '.jpg'
+        
+        currentSecond = str(time.time())
+        listSecond = currentSecond.split('.')
+        uniqueName = listSecond[0] + listSecond[1]
+
+        name = 'frame' + str(uniqueName) + '.jpg'
 
         print('Creating... ' + name)
 
-        cv2.imwrite(f'./generated_data/{name}', frame)
+        cv2.imwrite(f'./datasets/generated_data/{name}', frame)
 
-        currentFrame += 1
+        cv2.imshow('Showing ...', frame)
     
     else:
         break
 
-    cv2.imshow('Showing ...', frame)
 
     if cv2.waitKey(1) == 27:
         break
