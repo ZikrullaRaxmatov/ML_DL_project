@@ -54,7 +54,7 @@ while True:
 
         current_datetime = datetime.now()
         fr = '2024-10-19 08:00'
-        to = '2024-10-19 18:30'
+        to = '2024-10-19 19:30'
 
         if  fr <= str(current_datetime) <= to:
             if name not in student_names:
