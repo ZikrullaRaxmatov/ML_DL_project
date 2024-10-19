@@ -2,7 +2,7 @@ import cv2
 import os
 import time
 
-cap = cv2.VideoCapture(2)
+cap = cv2.VideoCapture(0)
 
 try:
     if not os.path.exists('./datasets/generated_data'):
@@ -28,7 +28,7 @@ while True:
 
         print('Creating... ' + name)
 
-        cv2.imwrite(f'./datasets/generated_data/{name}', frame)
+        #cv2.imwrite(f'./datasets/generated_data/{name}', frame)
 
         cv2.imshow('Showing ...', frame)
     
