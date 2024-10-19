@@ -54,9 +54,14 @@ while True:
 
         current_datetime = datetime.now()
         fr = '2024-10-19 08:00'
-        to = '2024-10-19 11:30'
+        to = '2024-10-19 18:30'
 
         if  fr <= str(current_datetime) <= to:
+            if name not in student_names:
+                student_names.append(name)
+                sendMessage(profMuhammadAftab['TOKEN'], profMuhammadAftab['CHAT_ID'], f"{name_and_id}, {current_datetime}")
+
+            '''
             match name:
                 case name if name in profMuhammadAftab['students']:
                     if name not in student_names:
@@ -68,6 +73,7 @@ while True:
                         student_names.append(name)
                         sendMessage(profJaydipMehta['TOKEN'], profJaydipMehta['CHAT_ID'], f"{name_and_id}, {current_datetime}")
                         break
+            '''
 
     cv2.imshow("Student attendance system", frame)
     cv2.imwrite(f'./generated_data/frame{str(currentFrame)}.jpg', frame)
