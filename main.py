@@ -1,11 +1,4 @@
-import time
 
-currentSecond = str(time.time())
+name = 'Zikrulla Rakhmatov_23300010'
 
-listSecond = []
-
-listSecond = currentSecond.split('.')
-
-unique = listSecond[0] + listSecond[1]
-
-print(unique)
+print(name.split('_')[0])
