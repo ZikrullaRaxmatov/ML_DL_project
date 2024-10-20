@@ -1,14 +1,12 @@
-import cv2
-import requests
-from datetime import datetime
 from simple_facerec import SimpleFacerec
 from professors import Professors
+from datetime import datetime
+from sending_message import SendMessage
+import cv2
 
 prof = Professors()
+req = SendMessage()
 
-def sendMessage(token, chat_id, msg):
-    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={msg}"
-    r = requests.get(url)
 
 student_names = ['Unknown']
 
@@ -41,7 +39,7 @@ while True:
         if  fr <= str(current_datetime) <= to:
             if name not in student_names:
                 student_names.append(name)
-                sendMessage(prof.profMuhammadAftab['TOKEN'], prof.profMuhammadAftab['CHAT_ID'], f"{name_and_id}, {current_datetime}")
+                req.sendMessage(prof.profMuhammadAftab['TOKEN'], prof.profMuhammadAftab['CHAT_ID'], f"{name_and_id}, {current_datetime}")
 
             '''
             match name:
