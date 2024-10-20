@@ -1,23 +1,25 @@
 from simple_facerec import SimpleFacerec
 from professors import Professors
 from datetime import datetime
-from sending_message import SendMessage
+import requests
 import cv2
-
-prof = Professors()
-req = SendMessage()
-
-
-student_names = ['Unknown']
 
 # Encode faces from a folder
 sfr = SimpleFacerec()
 sfr.load_encoding_images("./face_recognition_system/images/")
 
+prof = Professors()
+
+student_names = ['Unknown']
+
 # Load Camera
 cap = cv2.VideoCapture(2)
 
 currentFrame = 0
+
+def sendMessage(token, chat_id, msg):
+    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={msg}"
+    requests.get(url)
 
 while True:
     ret, frame = cap.read()
@@ -39,7 +41,7 @@ while True:
         if  fr <= str(current_datetime) <= to:
             if name not in student_names:
                 student_names.append(name)
-                req.sendMessage(prof.profMuhammadAftab['TOKEN'], prof.profMuhammadAftab['CHAT_ID'], f"{name_and_id}, {current_datetime}")
+                sendMessage(prof.profMuhammadAftab['TOKEN'], prof.profMuhammadAftab['CHAT_ID'], f"{name_and_id}, {current_datetime}")
 
             '''
             match name:
