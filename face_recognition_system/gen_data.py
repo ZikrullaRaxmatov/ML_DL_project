@@ -13,10 +13,9 @@ except OSError:
 
 listSecond = []
 
-
 while True:
     
-    ret, frame = cap.read()
+    ret, frame = cap.read('../videos/men_1.mp4')
 
     if ret:
         
@@ -28,7 +27,7 @@ while True:
 
         print('Creating... ' + name)
 
-        #cv2.imwrite(f'./datasets/generated_data/{name}', frame)
+        cv2.imwrite(f'./datasets/generated_data/{name}', frame)
 
         cv2.imshow('Showing ...', frame)
     
