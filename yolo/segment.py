@@ -4,12 +4,12 @@ import os
 import cv2
 
 #creating model 
-model = YOLO('weights/yolov8m-seg.pt')
+model = YOLO('./yolo/weights/yolov8m-seg.pt')
 names = model.model.names
 
 # input and output path
-input_video_path = 'videos/one_way_traffic.mp4'
-output_video_path = f"out/segment_{os.path.basename(input_video_path)}"
+input_video_path = './yolo/videos/one_way_traffic.mp4'
+output_video_path = f"./yolo/out/segment_{os.path.basename(input_video_path)}"
 
 #read video
 cap = cv2.VideoCapture(input_video_path)
