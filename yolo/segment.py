@@ -35,7 +35,7 @@ while True:
   for  mask, cls in zip(masks, clss):
     if names[int(cls) in ['car', 'track', 'person']]:
       try:
-        annotator.seg_bbox(mask=mask, mask_color=colors[int(cls), True], label=names[int(cls)])
+        annotator.seg_bbox(mask=mask, mask_color=(0, 255, 0), label=names[int(cls)])
       except: continue
 
   #out.write(img)
