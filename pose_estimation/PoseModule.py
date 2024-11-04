@@ -63,6 +63,5 @@ def main():
     #cv2.imshow('Frame', frame)
     cv2.waitKey(1)
 
-
 if __name__ == "__main":
   main()
