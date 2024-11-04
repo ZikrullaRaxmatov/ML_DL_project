@@ -13,7 +13,7 @@ class poseDetector():
 
     self.mpDraw = mp.solutions.drawing_utils
     self.mpPose = mp.solutions.pose
-    self.pose = self.mpPose.Pose(self.mode, self.upBody, self.smooth, self.detectionConf, self.trackingConf)
+    self.pose = self.mpPose.Pose(self, self.mode, self.upBody, self.smooth, self.detectionConf, self.trackingConf)
 
 
   def findPose(self, frame, draw=True):
@@ -55,7 +55,7 @@ def main():
     lmlist = detector.findPositions(frame)
     print(lmlist)
 
-    cTime = time.time
+    cTime = time.time()
     fps = 1/(cTime - pTime)
     pTime = cTime
 
