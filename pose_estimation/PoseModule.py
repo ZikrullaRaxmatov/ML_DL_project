@@ -64,4 +64,8 @@ def main():
     cv2.waitKey(1)
 
 if __name__ == "__main__":
+<<<<<<< HEAD
   main()
+=======
+  main()
+>>>>>>> refs/remotes/origin/main
